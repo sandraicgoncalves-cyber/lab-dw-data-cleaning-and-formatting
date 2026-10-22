@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def clean_column_names(insurance_company):
-    insurance_company.columns = (insurance_company.columns.str.strip().str.lower()-str.replace(" ", "_"))
+    insurance_company.columns = (insurance_company.columns.str.strip().str.lower().str.replace(" ", "_"))
     return insurance_company.columns.str.strip().str.lower().str.replace(" ", "_")
 
 
@@ -34,11 +34,10 @@ def clean_open_complaints(insurance_company):
 
 def main():
 
-    url = "https://raw.githubusercontent.com/data-bootcamp-v4/data/main/file1.csv"
-    insurance_company = pd.read_csv(url)
+    insurance_company = pd.read_csv(/Users/sandragoncalves/lab-dw-data-cleaning-and-formatting/"insurance_company_clean.csv")
 
     insurance_company = clean_column_names(insurance_company)
-    insurance_company = remove_empty_columns(insurance_company)
+    insurance_company = remove_empty_rows(insurance_company)
     insurance_company = clean_open_complaints(insurance_company)
     insurance_company = remove_duplicate_rows(insurance_company)
 
